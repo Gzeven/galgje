@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galgje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+  <body>
+    <h1>Galgje</h1>
+    <p>Vind het woord - voer een letter in</p>
+    <div class="game-container">
+      <svg height="250" width="200" class="figure-container">
+        <!--bovenkant galg-->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <!--touw-->
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <!--paal-->
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <!--onderkant galg-->
+        <line x1="20" y1="230" x2="100" y2="230" />
+        <!--schuine balk-->
+        <line x1="60" y1="40" x2="80" y2="20" />
+
+        <!-- hoofd -->
+        <circle cx="140" cy="70" r="20" class="figure-part" />
+        <!--lichaam-->
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+        <!--armen-->
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+        <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
+        <!--benen-->
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+        <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+      </svg>
+      <div class="wrong-letters-container">
+        <div id="wrong-letters"></div>
+      </div>
+      <div class="word" id="word"></div>
+    </div>
+
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <h2 id="final-message"></h2>
+        <h3 id="word-played"></h3>
+        <button id="play-again">Speel nog een keer</button>
+      </div>
+    </div>
+    <!--notificatie-->
+    <div class="notification-container" id="notification-container">
+      <p>Je hebt deze letter al een keer gebruikt!</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
