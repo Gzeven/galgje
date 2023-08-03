@@ -140,3 +140,22 @@ h1 {
 .notification-container.show {
   transform: translateY(-50px);
 }
+
+.input-container {
+  display: none;
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .input-container.mobile-only {
+    display: block;
+  }
+}
+
+#letter-input,
+#submit-letter {
+  font-family: 'Rye', cursive;
+  background-color: #ee5700;
+}
+
+

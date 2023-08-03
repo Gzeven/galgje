@@ -220,4 +220,43 @@ playAgainButton.addEventListener('click', () => {
   popup.style.display = 'none';
 });
 
+const letterInput = document.getElementById('letter-input');
+const submitButton = document.getElementById('submit-letter');
+
+// Submit the letter when the user clicks the "Submit" button
+submitButton.addEventListener('click', submitLetter);
+
+// Also allow the user to submit the letter by pressing the "Enter" key
+letterInput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    submitLetter();
+  }
+});
+
+function submitLetter() {
+  const letter = letterInput.value.trim().toLowerCase();
+  if (letter.match(/^[a-z]$/)) {
+    // Check if the letter is a lowercase alphabet (a-z)
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter);
+        displayWord();
+      } else {
+        showNotification();
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
+        updateWrongLettersElement();
+      } else {
+        showNotification();
+      }
+    }
+  } else {
+    // Display a notification if the input is not a single lowercase letter
+    alert('Alleen kleine letters toegestaan (a-z).');
+  }
+  letterInput.value = '';
+}
+
 displayWord();
